@@ -36,6 +36,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { PromotionService } from './services/promotion.service';
+import { HighlightDirective } from './directives/highlight.directive';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { PromotionService } from './services/promotion.service';
     AboutComponent,
     HomeComponent,
     ContactComponent,
-    LoginComponent
+    LoginComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
