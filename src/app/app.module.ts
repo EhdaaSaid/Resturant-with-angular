@@ -17,6 +17,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import {MatSliderModule} from '@angular/material/slider';
+import { HttpClientModule } from '@angular/common/http';
+import { baseURL } from './shared/baseurl';
+import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
+
 
 import 'hammerjs';
 import { MenuComponent } from './menu/menu.component';
@@ -30,6 +35,7 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { LoginComponent } from './login/login.component';
+import { PromotionService } from './services/promotion.service';
 
 
 @NgModule({
@@ -62,12 +68,18 @@ import { LoginComponent } from './login/login.component';
     MatSelectModule,
     MatSlideToggleModule,
     ReactiveFormsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSliderModule,
+    HttpClientModule
+
   ],
 
   providers: [
     DishService,
-    LeaderService
+    PromotionService,
+    LeaderService,
+    ProcessHTTPMsgService,
+    {provide: 'BaseURL', useValue: baseURL}
   ],
   entryComponents: [
     LoginComponent
